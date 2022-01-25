@@ -3,17 +3,19 @@ var builder = WebApplication.CreateBuilder(args);
  
 var connectionString = builder.Configuration.GetConnectionString("Work");
 
+//Setup entity framework DataBase Context
 builder.Services.AddDbContext<WorkContextDb>(options 
     => options.UseMySql(connectionString,ServerVersion.AutoDetect(connectionString))
         .LogTo(Console.WriteLine,LogLevel.Information)
-        .EnableSensitiveDataLogging()
         .EnableDetailedErrors());
 
 var app = builder.Build();
 
+//Enable static file server 
 app.UseDefaultFiles();
 app.UseStaticFiles();
 
+//Map endpoints 
 app.MapGet("/health", () => "Weee!");
 
 app.MapGet("/todo",  async (WorkContextDb db,string userid) 
@@ -50,7 +52,6 @@ app.MapDelete("/todo/{id}", async (WorkContextDb db, int id) => {
 app.MapGet("/task",async (WorkContextDb db,int listid) 
     => await db.TaskItems.Where(x => x.ListId == listid).ToListAsync());
 
-
 app.MapPost("/task", async (WorkContextDb db, TaskItem item) => {
     await db.TaskItems.AddAsync(item);
     await db.SaveChangesAsync();
@@ -65,7 +66,6 @@ app.MapPut("/task/{id}", async (WorkContextDb db, TaskItem itemupdate, int id) =
     await db.SaveChangesAsync();
     return Results.NoContent();
 });
-
 
 app.MapDelete("/task/{id}", async (WorkContextDb db, int id) => {
     var item = await db.TaskItems.FindAsync(id);

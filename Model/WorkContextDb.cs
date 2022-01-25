@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 
-
 public class WorkContextDb : DbContext
 {
     public DbSet<TodoItem> TodoItems => Set<TodoItem>();
