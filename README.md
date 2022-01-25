@@ -1,8 +1,8 @@
 # Build and Run with docker
 
-You need docker installed on you machine.
+You need docker installed on your machine.
 
-In appseetings.json file change the connections string for your local MySQL Server
+In appseetings.json file change the connection string for your local MySQL Server
 ```json
 "ConnectionStrings": {
     "Work": "server=localhost;database=work;user=user;password=password"
