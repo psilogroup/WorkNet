@@ -1,0 +1,22 @@
+#watch { background:#fff; z-index:100; position:fixed; bottom:10px; right:15px; width:150px; }
+#watch .tooltipWatch { width:300px; padding:8px 14px; display:none; position:absolute; right:0; top:-110px; z-index:1000; background:#fff; box-shadow:0 1px 3px rgba(0,0,0,0.4); margin:0; }
+#watch:hover .tooltipWatch { display:block; }
+#watch .tooltipWatch i { position:absolute; right:10px; bottom:-8px; font-size:10px; color:rgba(0,0,0,0.4); }
+#watch.stop { background:#ddd !important; }
+#watch.active { background:#fafafa; }
+#watch.active span:before { animation-name:watch; animation-duration:1s; animation-iteration-count:infinite; }
+#watch .display { text-align:center; margin:20px 0; display:block; font-size:16px; }
+#watch .display span { display:inline; }
+#watch .display span:before { content:":"; margin:0 10px; }
+#watch .display span:first-child:before { content:""; margin:0; }
+#watch button { padding:10px 0; outline:none; border:0; background:0; text-align:center; color:#333; }
+#watch button.pause.active { background:#333; color:#fff; }
+#watch button.running { display:none; }
+#watch.active button.stoped { display:none; }
+#watch.active button.running { display:block; }
+#watch .config { margin-top:20px; margin-bottom:20px; }
+@keyframes watch {
+	0% { opacity:1; }
+	50% { opacity:0; }
+	100% { opacity:1; }
+}

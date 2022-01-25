@@ -1,0 +1,9 @@
+header { width:100%; float:left; margin:0 0 20px; padding:10px 0; box-shadow:0 1px 3px rgba(0,0,0,0.4); background:#fff; }
+header h1 { font-size:20px; float:left; margin:0 0 0 15px; padding:0; }
+header span { position:relative; float:right; margin-right:15px; }
+header span input { border:0; text-align:right; }
+header span span { width:300px; padding:8px 14px; display:none; position:absolute; right:0; top:40px; z-index:1000; background:#fff; box-shadow:0 1px 3px rgba(0,0,0,0.4); margin:0; }
+header span:hover span { display:block; }
+header span span i { position:absolute; right:10px; top:-10px; font-size:10px; color:rgba(0,0,0,0.4); }
+
+body { background:#f1f1f1; }

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="work">
+    <head>
+        <meta charset="utf8"/>
+        <meta user="{{user}}"/>
+        <meta name="viewport" content="width=device-width, user-scalable=no"/>
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:400,700,300">
+        <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+        <title>Work</title>
+    </head>
+    <body>
+        <ng-view></ng-view>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-resource.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/assets/js/socket.io.js"></script>
+    <script src="/app/work.js"></script>
+    <script src="/app/controller/dashboard.js"></script>
+    <script src="/app/controller/watch.js"></script>
+    <script src="/app/controller/lists.js"></script>
+    <script src="/app/controller/memo.js"></script>
+    <script src="/assets/js/jquery.cookie.js"></script>
+    <script src="/assets/js/scripts.js"></script>
+</html>

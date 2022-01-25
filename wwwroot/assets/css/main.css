@@ -1,0 +1,26 @@
+@import "dashboard.css";
+@import "watch.css";
+@import "list.css";
+@import "memo.css";
+
+input { outline:none !important; }
+
+.input { position:relative; margin:30px 0 0; border-bottom:1px solid #999; }
+.input:first-child { margin:0; }
+.input input,
+.input textarea { width:100%; border:0; background:transparent; line-height:32px; padding:0; }
+.input label { position:absolute; top:0; left:0; line-height:32px; color:#333; transition:all 0.3s; }
+.input span { position:absolute; bottom:0; left:50%; width:0; transition:all 0.3s; background:#000; }
+.input input:focus + label,
+.input textarea:focus + label,
+.input input.active + label,
+.input textarea.active + label { top:-12px; font-size:12px; line-height:12px; }
+.input input:focus ~ span,
+.input textarea:focus ~ span,
+.input input.active ~ span,
+.input textarea.active ~ span { width:100%; left:0; }
+
+.box { float:left; width:100%; box-shadow:0 1px 3px rgba(0,0,0,0.4); margin:10px 0; }
+.box .header { text-align:center; padding:10px 0; background:#eee; color:#333; }
+.box .content { width:100%; float:left; background:#fff; padding:0 15px; } 
+.box .footer { background:#f1f1f1; padding:10px 0; } 

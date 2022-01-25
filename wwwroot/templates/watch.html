@@ -1,0 +1,45 @@
+<div id="watch" class="box">
+    <span class="tooltipWatch">
+        This is your pomodoro watch.<br/>
+        You can configure the work and the relax time in the boxes below.<br/>
+        Just start the watch and enjoy
+        <i class="fa fa-caret-down"></i>
+    </span>
+    <div class="header">
+        Pomodoro
+    </div>
+    <div class="content">
+	    <span class="display">
+	        <span>{{time.hour}}</span>
+	        <span>{{time.minute}}</span>
+	        <span>{{time.second}}</span>
+	    </span>
+        <div class="row config">
+            <div class="col-sm-6">
+                <div class="input">
+                    <input type="text" ng-blur="changeWork()" name="work" value="{{workMax}}" class="active"/>
+                    <label>Work</label>
+                    <span></span>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="input">
+                    <input type="text" ng-blur="changeRelax()" name="work" value="{{relaxMax}}" class="active"/>
+                    <label>Relax</label>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+	</div>
+	<div class="footer">
+	    <button class="col-sm-12 stoped" ng-click="start()">
+	    	Start
+	    </button>
+        <button class="col-sm-6 running pause" ng-click="pause()">
+            Pause
+        </button>
+        <button class="col-sm-6 running" ng-click="stop()">
+            Stop
+        </button>
+	</div>
+</div>

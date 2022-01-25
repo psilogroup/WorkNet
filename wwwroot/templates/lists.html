@@ -1,0 +1,42 @@
+<div id="lists" class="box">
+    <div class="header">
+        Lists
+    </div>
+    <div class="content">
+        <form class="new-list" ng-submit="newList()">
+            <div class="input">
+                <input id="list" type="text"/>
+                <label for="list">New list</label>
+                <span></span>
+            </div>
+            <button class="fa fa-plus"></button>
+        </form>
+        <div class="row">
+            <div class="col-sm-6 col-md-6" ng-repeat="item in lists">
+                <div class="list">
+                    <div class="header">
+                        {{item.name}}
+                        <button class="fa fa-trash" ng-click="listRemove(item.index)"></button>
+                    </div>
+                    <ul>
+                        <li ng-repeat="task in item.items">
+                            <span class="{{task.done}} holder">
+                                <input ng-click="done(item.index, task.index)" type="checkbox" ng-checked="task.complete"/>
+                                <span>{{task.name}}</span>
+                            </span>
+                            <button class="fa fa-trash" ng-click="itemRemove(item.index, task.index)"></button>
+                        </li>
+                    </ul>
+                    <form class="new-item" ng-submit="newItem(item.id, item.index)" name="{{item.index}}">
+                        <div class="input">
+                            <input id="task{{item.index}}" type="text"/>
+                            <label for="task{{item.index}}">New item</label>
+                            <span></span>
+                        </div>
+                        <button class="fa fa-plus"></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
